@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+int perfectNum(int n);
+void printPerfect(int x);
+
+int main(){
+	int a,b;
+	printf("Moi nhap vao so nguyen A: ");	scanf("%d", &a);
+	printf("Moi nhap vao so nguyen B: ");	scanf("%d", &b);
+	
+	printPerfect(a);
+	printPerfect(b);
+}
+
 int perfectNum(int n){
 	int sum=1;
 	for(int i=2;i*i<=n;i++){
@@ -13,10 +25,7 @@ int perfectNum(int n){
 	return(sum == n && n != 1);
 }
 
-int main(){
-	for(int i=1;i<=2;i++){
-	int n;	printf("Moi nhap vao so nguyen N thu %d: ",i);	scanf("%d", &n);
-	if(perfectNum(n))	printf("%d la mot so hoan hao\n",n);
-	else	printf("%d khong phai la mot so hoan hao\n",n);
-	}
+void printPerfect(int x){
+	if(perfectNum(x))	printf("True\n");
+	else	printf("False\n");
 }
